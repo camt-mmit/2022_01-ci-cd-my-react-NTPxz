@@ -5,7 +5,7 @@ on:
     branches:
       - "ci"
 jobs:
-  deploy-gh-pages:
+  cd:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -31,7 +31,7 @@ jobs:
           git checkout main
           git merge ci 
           git push
-  deploy-gh-pages1:
+  deploy-gh-pages:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
