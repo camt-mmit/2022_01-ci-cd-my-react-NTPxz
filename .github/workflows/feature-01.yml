@@ -51,7 +51,7 @@ jobs:
           https://git:${{ github.token }}@github.com/${{ github.repository }}.git
       - run: |
           mkdir ./gh-pages
-          git init-b gh-pages ./gh-pages
+          git init -b gh-pages ./gh-pages
           cd ./gh-pages
           git remote add -t gh-pages origin \
           https://git:${{ github.token }}@github.com/${{ github.repository }}.git
