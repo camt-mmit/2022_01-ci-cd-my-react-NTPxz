@@ -26,3 +26,8 @@ jobs:
       - run: |
           npm ci
       - run: npm run test
+      - run: |
+          git fetch --unshallow
+          git checkout main
+          git merge ci 
+          git push
