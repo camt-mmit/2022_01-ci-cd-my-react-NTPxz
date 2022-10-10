@@ -3,7 +3,7 @@ run-name: 2022_01-ci-di-my-angular-NTPxz
 on:
   push:
     branches:
-      - "main"
+      - "ci"
 jobs:
   deploy-gh-pages:
     runs-on: ubuntu-latest
