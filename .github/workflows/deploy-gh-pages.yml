@@ -1,28 +1,28 @@
-name: deploy-gh-pages
-run-name: 2022_01-ci-di-my-angular-NTPxz
-on:
-  push:
-    branches:
-      - "main"
-jobs:
-  deploy-gh-pages:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-        with:
-          token: ${{ github.token }}
-      - uses: actions/setup-node@v3
-        with:
-          node-version: "16"
-      - run: |
-          git config --global user.email "{{ github.event.pusher.email }}"
-          git config --global user.name "{{ github.actor }}"
-      - run: npm install -g yarn
-      - run: npm install
-      - run: PUBLIC_URL=/${{ github.event.repository.name }} npm run build
-      - run: |
-          git remote set-url origin \
-          https://git:${{ github.token }}@github.com/${{ github.repository }}.git
-      - run: |
-          npm ci
-      - run: npm run test
+# name: deploy-gh-pages
+# run-name: 2022_01-ci-di-my-angular-NTPxz
+# on:
+#   push:
+#     branches:
+#       - "main"
+# jobs:
+#   deploy-gh-pages:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - uses: actions/checkout@v3
+#         with:
+#           token: ${{ github.token }}
+#       - uses: actions/setup-node@v3
+#         with:
+#           node-version: "16"
+#       - run: |
+#           git config --global user.email "{{ github.event.pusher.email }}"
+#           git config --global user.name "{{ github.actor }}"
+#       - run: npm install -g yarn
+#       - run: npm install
+#       - run: PUBLIC_URL=/${{ github.event.repository.name }} npm run build
+#       - run: |
+#           git remote set-url origin \
+#           https://git:${{ github.token }}@github.com/${{ github.repository }}.git
+#       - run: |
+#           npm ci
+#       - run: npm run test
