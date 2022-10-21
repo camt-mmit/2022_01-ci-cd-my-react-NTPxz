@@ -1,5 +1,5 @@
-name: deploy-gh-pages
-run-name: 2022_01-ci-di-my-angular-NTPxz
+name: feature-01 CI
+run-name: ${{ github.actor }} is integrating feature-01
 on:
   push:
     branches:
